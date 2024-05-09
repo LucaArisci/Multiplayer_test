@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{B7BE13D0-5262-95EF-8D3F-A82331A0FC6F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NakamaConnection.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Movement.cs" Line="31" Column="1" />
+      <File FileName="Packages/manifest.json" />
+      <File FileName="Assets/Scripts/NakamaConnection.cs" Line="52" Column="71" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Multiplayer Test" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Movement.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e1750563-e383-4a9a-95e3-a6ad97e36190" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
