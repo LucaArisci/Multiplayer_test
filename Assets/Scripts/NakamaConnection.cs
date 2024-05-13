@@ -85,19 +85,4 @@ public class NakamaConnection : MonoBehaviour
     {
         await Socket.RemoveMatchmakerAsync(currentMatchmakingTicket);
     }
-
-    private async void OnReceivedMatchmakerMatched(IMatchmakerMatched matchmakerMatched)
-    {
-        var match = await Socket.JoinMatchAsync(matchmakerMatched);
-
-        Debug.Log("Our session ID: " + match.Self.SessionId);
-        Debug.Log("Our match: " + match);
-
-        MatchId = match.Id;
-
-        foreach (var user in match.Presences)
-        {
-            Debug.Log("Connected User Session ID: " + user.SessionId);
-        }
-    }
 }

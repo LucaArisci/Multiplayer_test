@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         MainMenu.GetComponent<MainMenu>().EnableFindMatchButton();
 
         NakamaConnection.Socket.ReceivedMatchmakerMatched += m => mainThread.Enqueue(() => OnReceivedMatchmakerMatched(m));
+        NakamaConnection.Socket.ReceivedMatchPresence += m => mainThread.Enqueue(() => OnReceivedMatchPresence(m));
     }
 
     private async void OnReceivedMatchmakerMatched(IMatchmakerMatched matched)
@@ -53,6 +54,27 @@ public class GameManager : MonoBehaviour
         // Cache a reference to the current match.
         currentMatch = match;
     }
+
+    private void OnReceivedMatchPresence(IMatchPresenceEvent matchPresenceEvent)
+    {
+        // For each new user that joins, spawn a player for them.
+        foreach (var user in matchPresenceEvent.Joins)
+        {
+            SpawnPlayer(matchPresenceEvent.MatchId, user);
+        }
+
+        // For each player that leaves, despawn their player.
+        foreach (var user in matchPresenceEvent.Leaves)
+        {
+            if (players.ContainsKey(user.SessionId))
+            {
+                Destroy(players[user.SessionId]);
+                players.Remove(user.SessionId);
+            }
+        }
+    }
+
+
 
     private void SpawnPlayer(string matchId, IUserPresence user, int spawnIndex = -1)
     {
