@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -7886817747402280450}
   - component: {fileID: -5729910435428356161}
   - component: {fileID: 5202082861285345394}
+  - component: {fileID: 593218411376673719}
   m_Layer: 0
   m_Name: NetworkLocalPlayer
   m_TagString: Untagged
@@ -161,3 +162,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateFrequency: 0.1
+--- !u!114 &593218411376673719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715564429224823253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea21dc5bbd743492e9d19c3cfc06136e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalInput: 0
+  VerticalInput: 0
+  Jump: 0
+  JumpHeld: 0
+  Attack: 0
+  InputChanged: 0
