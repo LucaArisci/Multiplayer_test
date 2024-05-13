@@ -947,9 +947,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NakamaConnection: {fileID: 1758466611}
   MainMenu: {fileID: 873053699}
-  SpawnPoints: {fileID: 0}
-  NetworkLocalPlayerPrefab: {fileID: 0}
-  NetworkRemotePlayerPrefab: {fileID: 0}
+  SpawnPoints: {fileID: 242312184}
+  NetworkLocalPlayerPrefab: {fileID: 715564429224823253, guid: b5c83f979f53c41f7bf1b5a062e79fbd, type: 3}
+  NetworkRemotePlayerPrefab: {fileID: 8863291575901491485, guid: c4716819e7f6e43b8b70e70f58767894, type: 3}
 --- !u!4 &521886037
 Transform:
   m_ObjectHideFlags: 0
@@ -1242,9 +1242,9 @@ RectTransform:
   - {fileID: 1010680207}
   m_Father: {fileID: 2075361774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 480, y: -291}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783471799
@@ -1360,7 +1360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &873053700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2326,9 +2326,9 @@ RectTransform:
   - {fileID: 1218860035}
   m_Father: {fileID: 2075361774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 480, y: -179}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 720, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215213674
@@ -3060,9 +3060,9 @@ RectTransform:
   - {fileID: 783471798}
   m_Father: {fileID: 891187833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360.00006, y: -470.08405}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960, y: 470}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075361775
