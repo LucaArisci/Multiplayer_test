@@ -89,6 +89,7 @@ public class MainMenu : MonoBehaviour
 
         //PlayerPrefs.SetString("Name", NameField.text);
         //gameManager.SetDisplayName(NameField.text);
+
         await gameManager.NakamaConnection.FindMatch(int.Parse(PlayersDropdown.options[PlayersDropdown.value].text));
     }
 

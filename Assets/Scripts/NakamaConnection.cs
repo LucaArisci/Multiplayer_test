@@ -14,9 +14,9 @@ public class NakamaConnection : MonoBehaviour
     //private const string SessionPrefName = "nakama.session";
     private const string DeviceIdentifierPrefName = "nakama.deviceUniqueIdentifier";
 
-    private IClient Client;
-    private ISession Session;
-    private ISocket Socket;
+    public IClient Client;
+    public ISession Session;
+    public ISocket Socket;
 
     private string currentMatchmakingTicket;
     private string MatchId;
@@ -67,12 +67,13 @@ public class NakamaConnection : MonoBehaviour
         // Open a new Socket for realtime communication.
         Socket = Client.NewSocket();
         await Socket.ConnectAsync(Session, true);
+
+        Debug.Log(Session);
+        Debug.Log(Socket);
     }
 
     public async Task FindMatch(int minPlayers = 2)
     {
-        Debug.Log("FindingMatch");
-
         var matchmakerTicket = await Socket.AddMatchmakerAsync("*", minPlayers, minPlayers);
 
         Debug.Log("Matchmaking ticket: " + matchmakerTicket);
