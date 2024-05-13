@@ -7,6 +7,9 @@ public class Movement : MonoBehaviour
     Rigidbody _rb;
     [SerializeField] private float _moveSpeed;
 
+    private float horizontalMovement;
+    private float verticalMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +29,15 @@ public class Movement : MonoBehaviour
 
         vectorMovement.y = _rb.velocity.y;
         _rb.velocity = vectorMovement;
+    }
+
+    public void SetHorizontalMovement(float value)
+    {
+        horizontalMovement = value;
+    }
+
+    public void SetVerticalMovement(float value)
+    {
+        verticalMovement = value;
     }
 }
