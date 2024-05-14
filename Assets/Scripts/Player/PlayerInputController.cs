@@ -5,9 +5,6 @@ public class PlayerInputController : MonoBehaviour
 {
     [HideInInspector] public float HorizontalInput;
     [HideInInspector] public float VerticalInput;
-    [HideInInspector] public bool Jump;
-    [HideInInspector] public bool JumpHeld;
-    [HideInInspector] public bool Attack;
     [HideInInspector] public bool InputChanged;
 
     private Movement playerMovementController;
