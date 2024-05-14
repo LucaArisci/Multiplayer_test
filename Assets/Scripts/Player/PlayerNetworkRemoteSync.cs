@@ -102,9 +102,9 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
             case OpCodes.VelocityAndPosition:
                 UpdateVelocityAndPositionFromState(matchState.State);
                 break;
-            //case OpCodes.Input:
-            //    SetInputFromState(matchState.State);
-            //    break;
+            case OpCodes.Input:
+                SetInputFromState(matchState.State);
+                break;
             default:
                 break;
         }
@@ -124,12 +124,13 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     /// Sets the appropriate input values on the PlayerMovementController and PlayerWeaponController based on incoming state data.
     /// </summary>
     /// <param name="state">The incoming state Dictionary.</param>
-    //private void SetInputFromState(byte[] state)
-    //{
-    //    var stateDictionary = GetStateAsDictionary(state);
+    private void SetInputFromState(byte[] state)
+    {
+        var stateDictionary = GetStateAsDictionary(state);
 
-    //    playerMovementController.SetHorizontalMovement(float.Parse(stateDictionary["horizontalInput"]));
-    //}
+        playerMovementController.SetHorizontalMovement(float.Parse(stateDictionary["horizontalInput"]));
+        playerMovementController.SetHorizontalMovement(float.Parse(stateDictionary["verticalInput"]));
+    }
 
     /// <summary>
     /// Updates the player's velocity and position based on incoming state data.
@@ -139,7 +140,7 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     {
         var stateDictionary = GetStateAsDictionary(state);
 
-        playerRigidbody.velocity = new Vector3(float.Parse(stateDictionary["velocity.x"]), 0, float.Parse(stateDictionary["velocity.z"]));
+        playerRigidbody.velocity = new Vector3(float.Parse(stateDictionary["velocity.x"]), 0f, float.Parse(stateDictionary["velocity.z"]));
 
         var position = new Vector3(
             float.Parse(stateDictionary["position.x"]),

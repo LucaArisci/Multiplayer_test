@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _moveSpeed = 10f;
+        //_moveSpeed = 10f;
     }
 
     private void FixedUpdate()
