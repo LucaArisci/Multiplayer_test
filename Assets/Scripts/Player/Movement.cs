@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody _rb;
-    //[SerializeField] private float _moveSpeed;
+    [SerializeField] private float _moveSpeed;
     private float knockbackTimer = 0f;
 
     private float horizontalMovement;
@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        //_moveSpeed = 10f;
+        _moveSpeed = 10f;
     }
 
     private void FixedUpdate()
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
             return;
         }
 
-        _rb.velocity = new Vector3(horizontalMovement, 0f, verticalMovement);
+        _rb.velocity = new Vector3(horizontalMovement, 0f, verticalMovement) * _moveSpeed;
     }
 
     public void SetHorizontalMovement(float value)

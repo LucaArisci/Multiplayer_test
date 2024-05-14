@@ -36,7 +36,7 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
         playerRigidbody = GetComponentInChildren<Rigidbody>();
         playerTransform = playerRigidbody.GetComponent<Transform>();
 
-        // Add an event listener to handle incoming match state data.
+        // Add an event listener to handle incoming match state data.f
         gameManager.NakamaConnection.Socket.ReceivedMatchState += EnqueueOnReceivedMatchState;
     }
 
@@ -52,15 +52,15 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
         }
 
         // Interpolate the player's position based on the lerp timer progress.
-        playerTransform.position = Vector3.Lerp(lerpFromPosition, lerpToPosition, lerpTimer / LerpTime);
-        lerpTimer += Time.deltaTime;
+        playerTransform.position = lerpToPosition; // Vector3.Lerp(lerpFromPosition, lerpToPosition, lerpTimer / LerpTime);
+        //lerpTimer += Time.deltaTime;
 
-        // If we have reached the end of the lerp timer, explicitly force the player to the last known correct position.
-        if (lerpTimer >= LerpTime)
-        {
-            playerTransform.position = lerpToPosition;
-            lerpPosition = false;
-        }
+        //// If we have reached the end of the lerp timer, explicitly force the player to the last known correct position.
+        //if (lerpTimer >= LerpTime)
+        //{
+        //    playerTransform.position = lerpToPosition;
+        //    lerpPosition = false;
+        //}
     }
 
     /// <summary>
