@@ -980,8 +980,8 @@ MonoBehaviour:
   NakamaConnection: {fileID: 1758466611}
   MainMenu: {fileID: 873053699}
   SpawnPoints: {fileID: 242312184}
-  NetworkLocalPlayerPrefab: {fileID: 715564429224823253, guid: b5c83f979f53c41f7bf1b5a062e79fbd, type: 3}
-  NetworkRemotePlayerPrefab: {fileID: 8863291575901491485, guid: c4716819e7f6e43b8b70e70f58767894, type: 3}
+  NetworkLocalPlayerPrefab: {fileID: 864847978778060870, guid: b5c83f979f53c41f7bf1b5a062e79fbd, type: 3}
+  NetworkRemotePlayerPrefab: {fileID: 2170591166349854209, guid: c4716819e7f6e43b8b70e70f58767894, type: 3}
 --- !u!4 &521886037
 Transform:
   m_ObjectHideFlags: 0

@@ -10,8 +10,10 @@ public static class MatchDataJson
     /// <summary>
     /// Creates a network message containing velocity and position.
     /// </summary>
+    /// 
     /// <param name="velocity">The velocity to send.</param>
     /// <param name="position">The position to send.</param>
+    /// 
     /// <returns>A JSONified string containing velocity and position data.</returns>
     public static string VelocityAndPosition(Vector3 velocity, Vector3 position)
     {
@@ -31,8 +33,10 @@ public static class MatchDataJson
     /// <summary>
     /// Creates a network message containing player input.
     /// </summary>
+    /// 
     /// <param name="horizontalInput">The current horizontal input.</param>
     /// <param name="verticalInput">The current vertical input.</param>
+    /// 
     /// <returns>A JSONified string containing player input.</returns>
     public static string Input(float horizontalInput, float verticalInput)
     {

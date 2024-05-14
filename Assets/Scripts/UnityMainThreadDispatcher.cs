@@ -22,6 +22,7 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 	/// <summary>
 	/// Locks the queue and adds the IEnumerator to the queue
 	/// </summary>
+    /// 
 	/// <param name="action">IEnumerator function that will be executed from the main thread.</param>
 	public void Enqueue(IEnumerator action)
 	{
@@ -36,6 +37,7 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 	/// <summary>
 	/// Locks the queue and adds the Action to the queue
 	/// </summary>
+    /// 
 	/// <param name="action">function that will be executed from the main thread.</param>
 	public void Enqueue(Action action)
 	{
@@ -45,7 +47,9 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 	/// <summary>
 	/// Locks the queue and adds the Action to the queue, returning a Task which is completed when the action completes
 	/// </summary>
+    /// 
 	/// <param name="action">function that will be executed from the main thread.</param>
+    /// 
 	/// <returns>A Task that can be awaited until the action completes</returns>
 	public Task EnqueueAsync(Action action)
 	{

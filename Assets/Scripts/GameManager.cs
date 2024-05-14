@@ -1,11 +1,7 @@
 using Nakama;
-using Nakama.TinyJson;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -74,8 +70,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
     private void SpawnPlayer(string matchId, IUserPresence user, int spawnIndex = -1)
     {
         // If the player has already been spawned, return early.
@@ -110,9 +104,6 @@ public class GameManager : MonoBehaviour
 
         // Add the player to the players array.
         players.Add(user.SessionId, player);
-
-        //// Give the player a color based on their index in the players array.
-        //player.GetComponentInChildren<PlayerColorController>().SetColor(System.Array.IndexOf(players.Keys.ToArray(), user.SessionId));
     }
 
     public async Task SendMatchStateAsync(long opCode, string state)
@@ -123,6 +114,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Sends a match state message across the network.
     /// </summary>
+    /// 
     /// <param name="opCode">The operation code.</param>
     /// <param name="state">The stringified JSON state data.</param>
     public void SendMatchState(long opCode, string state)

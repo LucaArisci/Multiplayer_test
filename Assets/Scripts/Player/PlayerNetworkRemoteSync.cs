@@ -14,12 +14,13 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     /// <summary>
     /// The speed (in seconds) in which to smoothly interpolate to the player's actual position when receiving corrected data.
     /// </summary>
-    public float LerpTime = 0.05f;
 
     private GameManager gameManager;
     private Movement playerMovementController;
     private Rigidbody playerRigidbody;
     private Transform playerTransform;
+
+    public float LerpTime = 0.05f;
     private float lerpTimer;
     private Vector3 lerpFromPosition;
     private Vector3 lerpToPosition;
@@ -77,6 +78,7 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     /// <summary>
     /// Passes execution of the event handler to the main unity thread so that we can interact with GameObjects.
     /// </summary>
+    /// 
     /// <param name="matchState">The incoming match state data.</param>
     private void EnqueueOnReceivedMatchState(IMatchState matchState)
     {
@@ -87,6 +89,7 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     /// <summary>
     /// Called when receiving match data from the Nakama server.
     /// </summary>
+    /// 
     /// <param name="matchState">The incoming match state data.</param>
     private void OnReceivedMatchState(IMatchState matchState)
     {
@@ -113,7 +116,9 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     /// <summary>
     /// Converts a byte array of a UTF8 encoded JSON string into a Dictionary.
     /// </summary>
+    /// 
     /// <param name="state">The incoming state byte array.</param>
+    /// 
     /// <returns>A Dictionary containing state data as strings.</returns>
     private IDictionary<string, string> GetStateAsDictionary(byte[] state)
     {
@@ -123,6 +128,7 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     /// <summary>
     /// Sets the appropriate input values on the PlayerMovementController and PlayerWeaponController based on incoming state data.
     /// </summary>
+    /// 
     /// <param name="state">The incoming state Dictionary.</param>
     private void SetInputFromState(byte[] state)
     {
@@ -135,6 +141,7 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     /// <summary>
     /// Updates the player's velocity and position based on incoming state data.
     /// </summary>
+    /// 
     /// <param name="state">The incoming state byte array.</param>
     private void UpdateVelocityAndPositionFromState(byte[] state)
     {

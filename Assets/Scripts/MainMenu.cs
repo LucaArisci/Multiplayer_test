@@ -10,14 +10,9 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject MenuPanel;
     public GameObject MatchmakingPanel;
-    //public GameObject CreditsPanel;
-    //public Button CreditsButton;
-    //public Button BackButton;
     public Button FindMatchButton;
     public Button CancelMatchmakingButton;
-    //public InputField NameField;
     public Dropdown PlayersDropdown;
-
     private GameManager gameManager;
 
     /// <summary>
@@ -27,14 +22,6 @@ public class MainMenu : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-        //if (PlayerPrefs.HasKey("Name"))
-        //{
-        //    NameField.text = PlayerPrefs.GetString("Name");
-        //}
-
-        // Add event listeners for the menu buttons.
-        //CreditsButton.onClick.AddListener(GoToCredits);
-        //BackButton.onClick.AddListener(BackFromCredits);
         FindMatchButton.onClick.AddListener(FindMatch);
         CancelMatchmakingButton.onClick.AddListener(CancelMatchmaking);
     }
@@ -44,9 +31,6 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     private void OnDestroy()
     {
-        // Remove event listeners for the menu buttons.
-        //CreditsButton.onClick.RemoveListener(GoToCredits);
-        //BackButton.onClick.RemoveListener(BackFromCredits);
         FindMatchButton.onClick.RemoveListener(FindMatch);
         CancelMatchmakingButton.onClick.RemoveListener(CancelMatchmaking);
     }
@@ -74,7 +58,6 @@ public class MainMenu : MonoBehaviour
     {
         MenuPanel.SetActive(true);
         MatchmakingPanel.SetActive(false);
-        //CreditsPanel.SetActive(false);
         gameObject.SetActive(false);
     }
 
@@ -85,10 +68,6 @@ public class MainMenu : MonoBehaviour
     {
         MenuPanel.SetActive(false);
         MatchmakingPanel.SetActive(true);
-        //CreditsPanel.SetActive(false);
-
-        //PlayerPrefs.SetString("Name", NameField.text);
-        //gameManager.SetDisplayName(NameField.text);
 
         await gameManager.NakamaConnection.FindMatch(int.Parse(PlayersDropdown.options[PlayersDropdown.value].text));
     }
@@ -100,28 +79,7 @@ public class MainMenu : MonoBehaviour
     {
         MenuPanel.SetActive(true);
         MatchmakingPanel.SetActive(false);
-        //CreditsPanel.SetActive(false);
 
         await gameManager.NakamaConnection.CancelMatchmaking();
     }
-
-    ///// <summary>
-    ///// Opens the credits screen.
-    ///// </summary>
-    //public void GoToCredits()
-    //{
-    //    MenuPanel.SetActive(false);
-    //    MatchmakingPanel.SetActive(false);
-    //    CreditsPanel.SetActive(true);
-    //}
-
-    ///// <summary>
-    ///// Goes back to the main menu.
-    ///// </summary>
-    //public void BackFromCredits()
-    //{
-    //    MenuPanel.SetActive(true);
-    //    MatchmakingPanel.SetActive(false);
-    //    CreditsPanel.SetActive(false);
-    //}
 }
