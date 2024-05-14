@@ -18,8 +18,10 @@ public static class MatchDataJson
         var values = new Dictionary<string, string>
         {
             { "velocity.x", velocity.x.ToString() },
+            { "velocity.y", velocity.y.ToString() },
             { "velocity.z", velocity.z.ToString() },
-            { "position.x", position.x.ToString() },
+            { "velocity.x", velocity.x.ToString() },
+            { "position.y", position.y.ToString() },
             { "position.z", position.z.ToString() }
         };
 
