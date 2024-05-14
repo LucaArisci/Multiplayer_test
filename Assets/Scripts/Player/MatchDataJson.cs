@@ -20,7 +20,7 @@ public static class MatchDataJson
             { "velocity.x", velocity.x.ToString() },
             { "velocity.y", velocity.y.ToString() },
             { "velocity.z", velocity.z.ToString() },
-            { "velocity.x", velocity.x.ToString() },
+            { "position.x", velocity.x.ToString() },
             { "position.y", position.y.ToString() },
             { "position.z", position.z.ToString() }
         };
