@@ -129,7 +129,7 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
         var stateDictionary = GetStateAsDictionary(state);
 
         playerMovementController.SetHorizontalMovement(float.Parse(stateDictionary["horizontalInput"]));
-        playerMovementController.SetHorizontalMovement(float.Parse(stateDictionary["verticalInput"]));
+        playerMovementController.SetVerticalMovement(float.Parse(stateDictionary["verticalInput"]));
     }
 
     /// <summary>
