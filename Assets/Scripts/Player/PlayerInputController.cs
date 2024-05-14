@@ -38,6 +38,6 @@ public class PlayerInputController : MonoBehaviour
 
         // Set inputs on Player Controllers.
         playerMovementController.SetHorizontalMovement(HorizontalInput);
-        playerMovementController.SetVerticalMovement(HorizontalInput);
+        playerMovementController.SetVerticalMovement(VerticalInput);
     }
 }

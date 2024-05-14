@@ -140,11 +140,11 @@ public class PlayerNetworkRemoteSync : MonoBehaviour
     {
         var stateDictionary = GetStateAsDictionary(state);
 
-        playerRigidbody.velocity = new Vector3(float.Parse(stateDictionary["velocity.x"]), 0f, float.Parse(stateDictionary["velocity.z"]));
+        playerRigidbody.velocity = new Vector3(float.Parse(stateDictionary["velocity.x"]), 0, float.Parse(stateDictionary["velocity.z"]));
 
         var position = new Vector3(
             float.Parse(stateDictionary["position.x"]),
-            0,
+            0.75f,
             float.Parse(stateDictionary["position.z"])
             );
 
