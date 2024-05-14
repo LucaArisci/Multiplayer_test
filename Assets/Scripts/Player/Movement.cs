@@ -5,30 +5,31 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody _rb;
-    [SerializeField] private float _moveSpeed;
+    //[SerializeField] private float _moveSpeed;
+    private float knockbackTimer = 0f;
 
     private float horizontalMovement;
     private float verticalMovement;
 
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _moveSpeed = 10f;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         MovePlayer();
     }
 
     void MovePlayer()
     {
-        var vectorMovement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized * _moveSpeed;
+        if (Time.time < knockbackTimer)
+        {
+            return;
+        }
 
-        vectorMovement.y = _rb.velocity.y;
-        _rb.velocity = vectorMovement;
+        _rb.velocity = new Vector3(horizontalMovement, 0f, verticalMovement);
     }
 
     public void SetHorizontalMovement(float value)
