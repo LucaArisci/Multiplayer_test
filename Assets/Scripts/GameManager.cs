@@ -104,6 +104,9 @@ public class GameManager : MonoBehaviour
 
         // Add the player to the players array.
         players.Add(user.SessionId, player);
+
+        // Give the player a color based on their index in the players array.
+        player.GetComponentInChildren<PlayerColorController>().SetColor(System.Array.IndexOf(players.Keys.ToArray(), user.SessionId));
     }
 
     public async Task SendMatchStateAsync(long opCode, string state)

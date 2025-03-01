@@ -49,8 +49,8 @@ public class PlayerColorController : MonoBehaviour
     private void LoadMaterialsheet()
     {
         var spritesheetName = string.Format("Fish{0}", Color.ToString());
-        var sprites = Resources.LoadAll<Sprite>(spritesheetName);
-        spriteSheetSprites = sprites.ToDictionary(x => x.name, x => x);
+        var materials = Resources.LoadAll<Material>(spritesheetName);
+        materialSheet = materials.ToDictionary(x => x.name, x => x);
         currentColor = Color;
     }
 }
